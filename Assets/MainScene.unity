@@ -16158,7 +16158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34205e3d4d782e642bed91ddb8ae5eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPreFab: {fileID: 5450920699084381371, guid: 457b11612fc56b244b1cc82035358a5b, type: 3}
+  enemyPreFabCommon: {fileID: 6599444553733593114, guid: 65742332b0f547a4393e653da62b81e1, type: 3}
+  enemyPreFabRare: {fileID: 8438219312741267192, guid: 95f11866c005be4479a5b9980b22ef6b, type: 3}
+  enemyPreFabEpic: {fileID: 1797767200167739869, guid: 9013ce0c836fbc742ac5918a3277b14a, type: 3}
+  enemyPreFabLegendary: {fileID: 4527154239073558378, guid: d2140edb6eb9c1e438682d053aa87ce9, type: 3}
+  enemyPreFabGeneric: {fileID: 5392343660921656822, guid: 51d17a4371326c646b26b89aba79e2cb, type: 3}
   spawnPoint: {fileID: 64995001}
   timeBetweenWaves: 5
   waveCountDownText: {fileID: 1279530884}
