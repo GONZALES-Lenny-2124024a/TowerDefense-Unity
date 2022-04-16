@@ -109,3 +109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  turretTag: Turret
+  range: 10
+  fireRate: 1
+  fireCountdown: 0
+  positionOffSet: {x: 0.5, y: 0, z: 0}
+  bulletPrefab: {fileID: 64228638290966218, guid: cacb017dcbc02b3429475902269178bf, type: 3}

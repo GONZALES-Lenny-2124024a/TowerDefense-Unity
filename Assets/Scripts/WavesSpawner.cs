@@ -45,6 +45,7 @@ public class WavesSpawner : MonoBehaviour
     }
 
     void SpawnEnemy() {     //ND
+        
         number = Random.Range(0, 100); //returns random number between 0-99
         if (number < 50) {
             Instantiate(enemyPreFabCommon, spawnPoint.position, spawnPoint.rotation);   //Spawn Common Ennemy
@@ -60,6 +61,6 @@ public class WavesSpawner : MonoBehaviour
         }
         else {
             Instantiate(enemyPreFabGeneric, spawnPoint.position, spawnPoint.rotation);   //Spawn Generic Ennemy
-        }      
+        }
     }
 }
