@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   turretTag: Turret
-  range: 10
+  range: 0
   fireRate: 1
   fireCountdown: 0
   positionOffSet: {x: 0.5, y: 0, z: 0}

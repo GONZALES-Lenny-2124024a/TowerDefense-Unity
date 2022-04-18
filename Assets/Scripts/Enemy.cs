@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Attributes")]
 
-    public float speed = 10f;
+    public float speed = 15f;
 
     [Header("Unity Requires")]
 
