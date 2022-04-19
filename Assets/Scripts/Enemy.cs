@@ -14,8 +14,9 @@ public class Enemy : MonoBehaviour
     public string turretTag = "Turret";
     private int wavePointIndex = 0;
 
-    private Transform target;    
+    private Transform target;
 
+    public int dropMoney;    
 
     void Start() {
         target = Waypoints.waypoints[0];

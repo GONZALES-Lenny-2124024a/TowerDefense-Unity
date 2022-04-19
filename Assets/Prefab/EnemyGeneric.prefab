@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   turretTag: Turret
+  dropMoney: 500
   range: 100
   fireRate: 1
   fireCountdown: 0

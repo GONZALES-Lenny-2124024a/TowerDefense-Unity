@@ -11,8 +11,6 @@ public class WavesSpawner : MonoBehaviour
     public Transform enemyPreFabLegendary;  //ND
     public Transform enemyPreFabGeneric;    //ND
 
-    //Create an array with all enemies' type        ND
-    //private Transform[] ennemies = {enemyPreFabCommon, enemyPreFabRare, enemyPreFabEpic, enemyPreFabLegendary, enemyPreFabGeneric};
     private int number;
 
     public Transform spawnPoint;    //For the position of the enemy
