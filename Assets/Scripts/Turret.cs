@@ -9,6 +9,7 @@ public class Turret : MonoBehaviour
     [Header("Attributes")]
 
     public float range = 15f;
+    public int damage;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
 
@@ -22,7 +23,8 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    public int dropMoney;
+    public GameObject deathEffect;
+    public int health = 100;
 
 
     // Start is called before the first frame update
@@ -80,7 +82,23 @@ public class Turret : MonoBehaviour
 
         if (bullet != null) {
             bullet.Seek(target);
+            bullet.damage = damage;
         }
+    }
+
+    public void TakeDamage(int amount) {
+        health -= amount;
+
+        if(health <= 0) {
+            Die();
+        }
+    }
+
+    void Die() {
+        GameObject effect = (GameObject) Instantiate(deathEffect,transform.position, Quaternion.identity);
+        Destroy(effect, 2f);
+
+        Destroy(gameObject);
     }
 
 

@@ -68,12 +68,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 15
+  damage: 50
   fireRate: 1
   enemyTag: Enemy
   partToRotate: {fileID: 526249933411860427}
   turnSpeed: 10
   bulletPrefab: {fileID: 64228638290966218, guid: cacb017dcbc02b3429475902269178bf, type: 3}
   firePoint: {fileID: 526249933786478960}
+  deathEffect: {fileID: 1320162286042680857, guid: 0b12d1f9706a8614ca62c6307c005a88, type: 3}
+  dropMoney: 0
+  health: 100
 --- !u!1 &526249933253012313
 GameObject:
   m_ObjectHideFlags: 0

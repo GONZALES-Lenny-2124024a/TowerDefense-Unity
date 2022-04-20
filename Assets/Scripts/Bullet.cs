@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     public float speed = 70f;
+    public int damage;
+
     public GameObject impactEffect;
 
     public void Seek (Transform _target) {  //Recovering the target from 'Turret.cs'
@@ -30,17 +32,28 @@ public class Bullet : MonoBehaviour
         }
 
         transform.Translate (dir.normalized * distanceThisFrame, Space.World);
+        transform.LookAt(target);
     }
 
     void HitTarget() {
         GameObject effectIns = (GameObject) Instantiate (impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
 
+        Damage(target);
         Destroy(gameObject);
-        Destroy(target.gameObject);
+    }
+
+    void Damage(Transform target) {
         if (target.tag == "Enemy") {
-            PlayerStats.Money += target.GetComponent<Enemy>().dropMoney;
-            Debug.Log("Money: " + PlayerStats.Money);
-        }
+            Enemy t = target.GetComponent<Enemy>();
+            if (t != null) {
+                t.TakeDamage(damage);
+            }
+        } else {
+            Turret t = target.GetComponent<Turret>();
+            if (t != null) {
+                t.TakeDamage(damage);
+            }        
+         }
     }
 }

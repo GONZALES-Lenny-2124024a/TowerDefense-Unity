@@ -109,7 +109,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  damage: 100
+  health: 100
   turretTag: Turret
+  deathEffect: {fileID: 8592057998186331719, guid: 0f0cf2739fea3da4db89be381c797b9f, type: 3}
   dropMoney: 500
   range: 100
   fireRate: 1
