@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    public Color notEnoughMoneyColor;
     public Vector3 positionOffSet;
 
     public GameObject turret;
@@ -44,7 +45,11 @@ public class Node : MonoBehaviour
 
         if (!buildManager.CanBuild) { return; } //Start of the game => none turret selected
 
-        rend.material.color = hoverColor;   //Change the color of the node
+        if(buildManager.HasMoney) {
+            rend.material.color = hoverColor;
+        } else {
+            rend.material.color = notEnoughMoneyColor;
+        }
     }
 
     void OnMouseExit () {
