@@ -18,6 +18,8 @@ public class BuildManager : MonoBehaviour
     public GameObject speedTurretPrefab;
 
     private TurretBluePrint turretToBuild;
+    public Node selectedNode;
+    public NodeUI nodeUI;
     public GameObject BuildTurretEffect;
     
     public bool CanBuild {
@@ -32,25 +34,30 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-
-    public void BuildTurretOn (Node node) {
-        if(PlayerStats.Money < turretToBuild.cost) {
-            Debug.Log("Not enough money to build that!");
+    public void SelectNode (Node node) {
+        if (selectedNode == node) { //If i click a second time on th same node, the ui disappear
+            DeselectNode();
             return;
         }
+        selectedNode = node;
+        turretToBuild = null;
 
-        PlayerStats.Money -= turretToBuild.cost;
-        Debug.Log("Money: " + PlayerStats.Money);
-        
-        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-        GameObject buildEffect = (GameObject) Instantiate(BuildTurretEffect, node.GetBuildPosition(), Quaternion.identity);
-        node.turret = turret;
+        nodeUI.SetTarget(node);
+    }
 
-        Debug.Log("Turret build!");
+    public void DeselectNode() {
+        selectedNode = null;
+        nodeUI.Hide();
     }
 
     public void SelectTurretToBuild(TurretBluePrint turret) {
         turretToBuild = turret;
+        DeselectNode();
     }
-     
+    
+    public TurretBluePrint GetTurretToBuild () {
+        return turretToBuild;
+    }
+    
+    
 }
